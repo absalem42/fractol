@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:12:12 by absalem           #+#    #+#             */
-/*   Updated: 2023/11/13 16:12:14 by absalem          ###   ########.fr       */
+/*   Updated: 2023/11/21 16:17:42 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define ERROR_MESSAGE "Enter \n\t\"mandel\" \n\t\"julia <1> <2>\" \n\t\"burning_ship\"\n"
+# define ERROR_MESSAGE "Enter \n\t\"mandel\" \n\t\"julia <1> <2>\"\n"
 
 # define HEIGHT 800
 # define WIDTH 800
@@ -29,7 +29,7 @@
 # define ORANGE 0xFFA500
 # define PURPLE 0x800080
 
-# define SKY_BLUE 0x87CEEB
+# define SKY_BLUE 0x87CEEB 
 # define LAVENDER 0xE6E6FA
 # define CHOCOLATE 0xD2691E
 # define LIME_GREEN 0x32CD32
@@ -48,3 +48,27 @@
 # define MENU_KEY 46
 # define MOUSE_UP 5
 # define MOUSE_DOWN 4
+
+typedef struct s_img
+{
+	void		*img;
+	char		*addr;
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
+}				t_img;
+
+typedef struct s_fractal
+{
+    void *mlx_connection;
+    void *mlx_window;
+    t_img img;
+    
+}   t_fractal;
+
+int	ft_strcmp(char *s1, char *s2);
+void	putstr_fd(char *s, int fd);
+double	atoi_dbl(char *s);
+
+
+#endif

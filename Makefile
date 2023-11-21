@@ -6,42 +6,33 @@
 #    By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/28 12:12:25 by absalem           #+#    #+#              #
-#    Updated: 2023/10/28 12:12:27 by absalem          ###   ########.fr        #
+#    Updated: 2023/11/21 14:47:21 by absalem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-CC		=	cc
+CC		= cc
+CFLAGS	= -Wall -Wextra -Werror
+NAME	= fractol
+SRC		= main.c utiles.c
+FFLAGS	= -framework OpenGL -framework AppKit
+SRCS	= $(SRC:%.c=%.o)
 
-CFLAGS	=	-Wall -Wextra -Werror
+all: $(NAME)
 
-NAME1	=	server
-NAME2	=	client
+minilibx:
+	cd minilibx && make
 
-LIBS	=	libft/libft.a ft_printf/libftprintf.a
-
-SRC2	=	client.c
-SRC1	=	server.c
-
-SRCS2	=	$(SRC2:%.c=%.o)
-SRCS1	=	$(SRC1:%.c=%.o)
-
-all : $(NAME1) $(NAME2)
-
-$(NAME1) $(NAME2) : $(SRCS1) $(SRCS2)
-	@make all -C ./ft_printf 
-	@make all -C ./libft
-	$(CC) $(CFLAGS) $(SRC1) $(LIBS) -o $(NAME1) 
-	$(CC) $(CFLAGS) $(SRC2) $(LIBS) -o $(NAME2) 
+$(NAME): $(SRCS) minilibx
+	$(CC) $(CFLAGS) $(SRCS) $(FFLAGS) minilibx/libmlx.a -o $(NAME)
 
 clean:
-	@make clean -C ./libft
-	@make clean -C ./ft_printf
-	rm -fr $(SRCS1) $(SRCS2) 
+	rm -fr $(SRCS)
 
 fclean: clean
-	@make fclean -C ./libft
-	@make fclean -C ./ft_printf
-	rm -fr $(NAME1) $(NAME2) 
+	rm -fr $(NAME)
+	cd minilibx && make clean
 
 re: fclean all
+
+.PHONY: all clean fclean re minilibx
