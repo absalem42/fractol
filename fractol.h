@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:12:12 by absalem           #+#    #+#             */
-/*   Updated: 2023/11/21 16:17:42 by absalem          ###   ########.fr       */
+/*   Updated: 2023/11/27 12:10:45 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,12 @@
 # define MOUSE_UP 5
 # define MOUSE_DOWN 4
 
+typedef struct s_complex
+{
+	double		x;
+	double		y;
+}				t_complex;
+
 typedef struct s_img
 {
 	void		*img;
@@ -60,15 +66,23 @@ typedef struct s_img
 
 typedef struct s_fractal
 {
-    void *mlx_connection;
-    void *mlx_window;
-    t_img img;
-    
-}   t_fractal;
+	t_img		img;
+	void		*mlx;
+	void		*win;
+	char		*name;
+	double		outer_value;
+	int			iteration;
+	double		shift_x;
+	double		shift_y;
+	double		zoom;      
+	double		julia_x;
+	double		julia_y;
+	int		visib;
+}				t_fractal;
 
 int	ft_strcmp(char *s1, char *s2);
 void	putstr_fd(char *s, int fd);
 double	atoi_dbl(char *s);
-
+void start_fractol(t_fractal *fractal);
 
 #endif
