@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:06:49 by absalem           #+#    #+#             */
-/*   Updated: 2023/11/27 12:55:43 by absalem          ###   ########.fr       */
+/*   Updated: 2023/11/27 15:48:05 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ int	main(int ac, char **av)
 	else
 	{
 		putstr_fd(ERROR_MESSAGE, STDERR_FILENO);
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 }

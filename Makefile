@@ -6,7 +6,7 @@
 #    By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/28 12:12:25 by absalem           #+#    #+#              #
-#    Updated: 2023/11/27 12:11:07 by absalem          ###   ########.fr        #
+#    Updated: 2023/11/27 17:59:00 by absalem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 NAME	= fractol
-SRC		= main.c utiles.c Initialize.c
+SRC		= main.c utiles.c Initialize.c draw.c math.c
 FFLAGS	= -framework OpenGL -framework AppKit
 SRCS	= $(SRC:%.c=%.o)
 

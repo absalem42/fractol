@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:23:15 by absalem           #+#    #+#             */
-/*   Updated: 2023/11/27 13:26:13 by absalem          ###   ########.fr       */
+/*   Updated: 2023/11/27 15:43:00 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	malloc_error(void)
 {
-	perror("Problems with malloc");
-	exit(EXIT_FAILURE);
+	perror("malloc fails");
+	exit(1);
 }
 
 void start_fractol(t_fractal *fractol)
@@ -32,8 +32,13 @@ void start_fractol(t_fractal *fractol)
 	fractol->img.img = mlx_new_image(fractol->mlx, WIDTH, HEIGHT);
 	if(!fractol->img.img)
 	{
-		mlx_destroy_window(fractol->mlx,fractol->win);
+		mlx_destroy_window(fractol->mlx, fractol->win);
 		free(fractol->mlx);
 		malloc_error();
 	}
+	fractol->img.addr_pix = mlx_get_data_addr(fractol->img.img,
+		&fractol->img.bits_per_pixel, &fractol->img.line_length,
+		&fractol->img.endian);
+	key_hook(fractol);
+	data_init(fractol);
 }

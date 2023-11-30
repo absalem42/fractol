@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:12:12 by absalem           #+#    #+#             */
-/*   Updated: 2023/11/27 12:10:45 by absalem          ###   ########.fr       */
+/*   Updated: 2023/11/27 17:30:18 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ typedef struct s_complex
 typedef struct s_img
 {
 	void		*img;
-	char		*addr;
+	char		*addr_pix;
 	int			bits_per_pixel;
 	int			line_length;
 	int			endian;
@@ -83,6 +83,16 @@ typedef struct s_fractal
 int	ft_strcmp(char *s1, char *s2);
 void	putstr_fd(char *s, int fd);
 double	atoi_dbl(char *s);
+
+t_complex	sum_complex(t_complex z1, t_complex z2);
+t_complex	square_complex(t_complex z);
+double	scale(double s, double min2, double max2, double max1);
+
 void start_fractol(t_fractal *fractal);
+double	scale(double s, double min2, double max2, double max1);
+t_complex	sum_complex(t_complex z1, t_complex z2);
+t_complex	square_complex(t_complex z);
+
+
 
 #endif
