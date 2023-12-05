@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:23:15 by absalem           #+#    #+#             */
-/*   Updated: 2023/11/27 15:43:00 by absalem          ###   ########.fr       */
+/*   Updated: 2023/11/30 17:16:21 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ void start_fractol(t_fractal *fractol)
 	fractol->img.addr_pix = mlx_get_data_addr(fractol->img.img,
 		&fractol->img.bits_per_pixel, &fractol->img.line_length,
 		&fractol->img.endian);
-	key_hook(fractol);
-	data_init(fractol);
+	// key_hook(fractol);
+	// data_init(fractol);
 }
