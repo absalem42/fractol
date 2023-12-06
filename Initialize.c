@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:23:15 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/06 13:15:10 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/06 17:29:03 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ void	data_init(t_fractal *fractol)
 	fractol->iteration = 50;
 	fractol->shift_x = 0;
 	fractol->shift_y = 0;
+	fractol->zoom = 1.0;
 }
 
 void	key_hook(t_fractal *fractol)
 {
 	mlx_hook(fractol->win, 2, 1L << 0, key_press, fractol);
-	// mlx_hook(fractol->win, 4, 1L << 2, mouse_press, fractol);
-	// mlx_hook(fractol->win, 17, 1L << 17, close_press, fractol);
-	// mlx_hook(fractol->win, 6, 1L << 6, julia_track, fractol);
+	mlx_hook(fractol->win, 4, 1L << 2, mouse_press, fractol);
+	mlx_hook(fractol->win, 17, 1L << 17, close_press, fractol);
+	mlx_hook(fractol->win, 6, 1L << 6, julia_track, fractol);
 }
 
 void start_fractol(t_fractal *fractol)

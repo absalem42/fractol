@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:12:12 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/05 17:17:15 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/06 17:29:58 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,9 @@ double	scale(double s, double min2, double max2, double max1);
 void	fractal_draw(t_fractal *fractol);
 int		key_press(int keycode, t_fractal *fractol);
 void	key_hook(t_fractal *fractol);
-
+int	mouse_press(int keycode, int x, int y, t_fractal *fractol);
+void	mandel_vs_julia(t_complex *z, t_complex *c, t_fractal *fractal);
+int close_press(t_fractal *fractol);
+int	julia_track(int x, int y, t_fractal *fractal);
 
 #endif

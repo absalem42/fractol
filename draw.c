@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:48:30 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/06 13:06:52 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/06 17:25:23 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,20 @@ void    my_pixel_put(int x, int y, t_img *img, int color)
 	offset = (y * img->line_length) + (x * (img->bits_per_pixel / 8));
 	*(unsigned int *)(img->addr_pix + offset) = color;
 }
+
+void	mandel_vs_julia(t_complex *z, t_complex *c, t_fractal *fractal)
+{
+	if (!ft_strcmp(fractal->name, "julia"))
+	{
+		c->x = fractal->julia_x;
+		c->y = fractal->julia_y;
+	}
+	else
+	{
+		c->x = z->x;
+		c->y = z->y;
+	}
+}
 void	draw_pixel(int x, int y, t_fractal *fractol)
 {
 	t_complex	z;
@@ -30,9 +44,9 @@ void	draw_pixel(int x, int y, t_fractal *fractol)
 	z.x = 0.0;
 	z.y = 0.0;
 
-	c.x = scale(x, -2, +2, WIDTH) + fractol->shift_x;
-	c.y = scale(y, +2, -2, HEIGHT) + fractol->shift_y;
-	// mandel_vs_julia(&z, &c, fractol);
+	z.x = (scale(x, -2, +2, WIDTH) * fractol->zoom) + fractol->shift_x;
+	z.y = (scale(y, +2, -2, HEIGHT) * fractol->zoom) + fractol->shift_y;
+	mandel_vs_julia(&z, &c, fractol);
 	while (i < fractol->iteration)
 	{
 		z = sum_complex(square_complex(z), c);
