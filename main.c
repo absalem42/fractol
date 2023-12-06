@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:06:49 by absalem           #+#    #+#             */
-/*   Updated: 2023/11/30 17:18:16 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/06 13:07:20 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	main(int ac, char **av)
 	{
 	// void	*mlx;
 	// void	*mlx_win;
-
 	// mlx = mlx_init();
 	// mlx_win = mlx_new_window(mlx, 800, 800, "Hello world!");
 	// mlx_loop(mlx);
@@ -34,7 +33,8 @@ int	main(int ac, char **av)
 			fractol.julia_y = atoi_dbl(av[3]);
 		}
 		start_fractol(&fractol);
-		// fractal_draw(&fractol);
+		fractal_draw(&fractol);
+		mlx_loop(fractol.mlx);
 	}
 	else
 	{
