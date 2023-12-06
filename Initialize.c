@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:23:15 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/06 17:29:03 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/06 19:40:51 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static void	malloc_error(void)
 void	data_init(t_fractal *fractol)
 {
 	fractol->outer_value = 4;
-	fractol->iteration = 50;
-	fractol->shift_x = 0;
-	fractol->shift_y = 0;
+	fractol->iteration = 0;
+	fractol->shift_x = 0.0;
+	fractol->shift_y = 0.0;
 	fractol->zoom = 1.0;
 }
 

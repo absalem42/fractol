@@ -6,14 +6,14 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:12:12 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/06 17:29:58 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/06 19:25:42 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "minilibx/mlx.h"
+# include "./mlx/mlx.h"
 # include <math.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -21,8 +21,8 @@
 
 # define ERROR_MESSAGE "Enter \n\t\"mandel\" \n\t\"julia <1> <2>\"\n"
 
-# define HEIGHT 800
-# define WIDTH 800
+# define HEIGHT 500
+# define WIDTH 500
 
 # define BLACK 0x000000
 # define WHITE 0xFFFFFF

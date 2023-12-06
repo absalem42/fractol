@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:48:30 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/06 17:25:23 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/06 19:22:26 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ void	draw_pixel(int x, int y, t_fractal *fractol)
 	int			color;
 	
 	i = 0;
-	z.x = 0.0;
-	z.y = 0.0;
 
 	z.x = (scale(x, -2, +2, WIDTH) * fractol->zoom) + fractol->shift_x;
 	z.y = (scale(y, +2, -2, HEIGHT) * fractol->zoom) + fractol->shift_y;
@@ -52,7 +50,7 @@ void	draw_pixel(int x, int y, t_fractal *fractol)
 		z = sum_complex(square_complex(z), c);
 		if ((z.x * z.x) + (z.y * z.y) > fractol->outer_value)
 		{
-			color = i * fractol->iteration * SKY_BLUE;
+			color = scale(i,SKY_BLUE,LAVENDER,fractol->iteration);
 			my_pixel_put(x, y, &fractol->img, color);
 			return ;
 		}
