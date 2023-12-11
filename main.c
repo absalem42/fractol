@@ -6,12 +6,11 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:06:49 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/06 17:31:14 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/11 12:55:07 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
 
 int	main(int ac, char **av)
 {

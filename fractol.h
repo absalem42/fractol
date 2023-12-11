@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:12:12 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/06 19:25:42 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/11 13:34:55 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,12 @@
 # define RIGHT_KEY 124
 # define LEFT_KEY 123
 # define UP_KEY 126
-# define R_KEY 44 NEED TO FIX
+# define R_KEY 15 
 # define DOWN_KEY 125
 # define MENU_KEY 46
 # define MOUSE_UP 5
 # define MOUSE_DOWN 4
+# define JULIA_LOCK 37
 
 typedef struct s_complex
 {
@@ -77,6 +78,7 @@ typedef struct s_fractal
 	double		zoom;      
 	double		julia_x;
 	double		julia_y;
+	int 		julia_lock;
 	int		visib;
 }				t_fractal;
 
