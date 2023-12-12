@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:12:12 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/11 13:34:55 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/11 18:13:07 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define ERROR_MESSAGE "Enter \n\t\"mandel\" \n\t\"julia <1> <2>\"\n"
+# define ERROR_MESSAGE "Enter \n\t\"mandelbrot\" \n\t\"julia <1> <2>\"\n"
 
-# define HEIGHT 500
-# define WIDTH 500
+# define HEIGHT 800
+# define WIDTH 800
 
 # define BLACK 0x000000
 # define WHITE 0xFFFFFF
@@ -45,7 +45,6 @@
 # define UP_KEY 126
 # define R_KEY 15 
 # define DOWN_KEY 125
-# define MENU_KEY 46
 # define MOUSE_UP 5
 # define MOUSE_DOWN 4
 # define JULIA_LOCK 37
@@ -101,5 +100,6 @@ int	mouse_press(int keycode, int x, int y, t_fractal *fractol);
 void	mandel_vs_julia(t_complex *z, t_complex *c, t_fractal *fractal);
 int close_press(t_fractal *fractol);
 int	julia_track(int x, int y, t_fractal *fractal);
+int	check_input(char *str1, char *str2);
 
 #endif

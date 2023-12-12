@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fractol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:06:49 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/11 12:55:07 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/11 18:17:20 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ int	main(int ac, char **av)
 {
 	t_fractal	fractol;
 
-	if ((ac == 2 && !ft_strcmp(av[1], "mandel"))
+	if (((ac == 2 && !ft_strcmp(av[1], "mandelbrot"))
 		|| (ac == 4 && !ft_strcmp(av[1], "julia")))
+			&& !check_input(av[2],av[3]))
 	{
 		fractol.name = av[1];
 		if (!ft_strcmp(av[1], "julia"))

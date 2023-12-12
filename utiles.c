@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:39:46 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/11 12:02:00 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/11 18:11:29 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,23 @@ double	atoi_dbl(char *s)
 		fractional_part = fractional_part + (*s++ - 48) * pow;
 	}
 	return ((integer_part + fractional_part) * sign);
+}
+
+int	check_input(char *str1, char *str2)
+{
+	if (!str1 || !str2)
+		return (0);
+	while (*str1)
+	{
+		if (!(*str1 >= '0' && *str1 <= '9'))
+			return (1);
+		str1++;
+	}
+	while (*str2)
+	{
+		if (!(*str2 >= '0' && *str2 <= '9'))
+			return (1);
+		str2++;
+	}
+	return (0);	
 }
