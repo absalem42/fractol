@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:48:30 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/11 12:13:00 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/12 18:09:51 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	draw_pixel(int x, int y, t_fractal *fractol)
 	i = 0;
 	z.x = (scale(x, -2, +2, WIDTH) * fractol->zoom) + fractol->shift_x;
 	z.y = (scale(y, +2, -2, HEIGHT) * fractol->zoom) + fractol->shift_y;
+
 	mandel_vs_julia(&z, &c, fractol);
 	while (i < fractol->iteration)
 	{

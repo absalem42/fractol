@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:12:12 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/11 18:13:07 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/12 16:03:06 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define ERROR_MESSAGE "Enter \n\t\"mandelbrot\" \n\t\"julia <1> <2>\"\n"
+# define ERROR_MESSAGE "Enter \n\t\"mandelbrot\" \n\t\"julia <1> <1>\"\n"
 
 # define HEIGHT 800
 # define WIDTH 800
@@ -53,7 +53,7 @@ typedef struct s_complex
 {
 	double		x;
 	double		y;
-}				t_complex;
+}	t_complex;
 
 typedef struct s_img
 {
@@ -62,7 +62,7 @@ typedef struct s_img
 	int			bits_per_pixel;
 	int			line_length;
 	int			endian;
-}				t_img;
+}	t_img;
 
 typedef struct s_fractal
 {
@@ -74,32 +74,33 @@ typedef struct s_fractal
 	int			iteration;
 	double		shift_x;
 	double		shift_y;
-	double		zoom;      
+	double		zoom;
 	double		julia_x;
 	double		julia_y;
-	int 		julia_lock;
-	int		visib;
-}				t_fractal;
+	int			julia_lock;
+	int			visib;
+}	t_fractal;
 
-int	ft_strcmp(char *s1, char *s2);
-void	putstr_fd(char *s, int fd);
-double	atoi_dbl(char *s);
+int			ft_strcmp(char *s1, char *s2);
+void		putstr_fd(char *s, int fd);
+double		atoi_dbl(char *s);
+int			check_range(char *str1, char *str2);
 
 t_complex	sum_complex(t_complex z1, t_complex z2);
 t_complex	square_complex(t_complex z);
-double	scale(double s, double min2, double max2, double max1);
+double		scale(double s, double min2, double max2, double max1);
 
-void    my_pixel_put(int x, int y, t_img *img, int color);
-void	data_init(t_fractal *fractol);
-void 	start_fractol(t_fractal *fractal);
-double	scale(double s, double min2, double max2, double max1);
-void	fractal_draw(t_fractal *fractol);
-int		key_press(int keycode, t_fractal *fractol);
-void	key_hook(t_fractal *fractol);
-int	mouse_press(int keycode, int x, int y, t_fractal *fractol);
-void	mandel_vs_julia(t_complex *z, t_complex *c, t_fractal *fractal);
-int close_press(t_fractal *fractol);
-int	julia_track(int x, int y, t_fractal *fractal);
-int	check_input(char *str1, char *str2);
+void		my_pixel_put(int x, int y, t_img *img, int color);
+void		data_init(t_fractal *fractol);
+void		start_fractol(t_fractal *fractal);
+double		scale(double s, double min2, double max2, double max1);
+void		fractal_draw(t_fractal *fractol);
+int			key_press(int keycode, t_fractal *fractol);
+void		key_hook(t_fractal *fractol);
+int			mouse_press(int keycode, int x, int y, t_fractal *fractol);
+void		mandel_vs_julia(t_complex *z, t_complex *c, t_fractal *fractal);
+int			close_press(t_fractal *fractol);
+int			julia_track(int x, int y, t_fractal *fractal);
+int			check_input(char *str1, char *str2);
 
 #endif
