@@ -6,7 +6,7 @@
 /*   By: absalem < absalem@student.42abudhabi.ae    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:12:12 by absalem           #+#    #+#             */
-/*   Updated: 2023/12/12 16:03:06 by absalem          ###   ########.fr       */
+/*   Updated: 2023/12/13 12:18:56 by absalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define ERROR_MESSAGE "Enter \n\t\"mandelbrot\" \n\t\"julia <1> <1>\"\n"
+# define ERROR_MESSAGE "Enter \n\t\"mandelbrot\" \n\t\"julia <num> <num>\"\n"
 
 # define HEIGHT 800
 # define WIDTH 800
@@ -85,6 +85,7 @@ int			ft_strcmp(char *s1, char *s2);
 void		putstr_fd(char *s, int fd);
 double		atoi_dbl(char *s);
 int			check_range(char *str1, char *str2);
+int			is_digit(char c);
 
 t_complex	sum_complex(t_complex z1, t_complex z2);
 t_complex	square_complex(t_complex z);
